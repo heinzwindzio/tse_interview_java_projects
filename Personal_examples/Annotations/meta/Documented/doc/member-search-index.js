@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"MyDocumentedAnnotation","l":"author()"},{"p":"<Unnamed>","c":"MyService","l":"execute()"},{"p":"<Unnamed>","c":"MyService","l":"MyService()","u":"%3Cinit%3E()"}];updateSearchResults();
