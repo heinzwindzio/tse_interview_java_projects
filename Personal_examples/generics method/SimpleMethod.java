@@ -1,4 +1,4 @@
-public class Simple0 {
+public class SimpleMethod {
     
     // make the return type generic by adding a type parameter <T>
     public static <T> void printElement(T element) {

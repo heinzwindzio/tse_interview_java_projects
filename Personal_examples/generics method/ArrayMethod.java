@@ -1,4 +1,4 @@
-public class GenericMethodExample {
+public class ArrayMethod {
 
   // This is a generic method. It works with any type (T)
   // The type can be any letter - T is just the convention
