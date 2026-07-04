@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Arrays;
 
-public class ForEachExample {
+public class ConsumerExample2 {
     public static void main(String[] args) {
         List<String> names = Arrays.asList("Apple", "Banana", "Cherry");
 

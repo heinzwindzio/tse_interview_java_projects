@@ -4,7 +4,7 @@ import java.util.function.Consumer;
 // The Java Consumer interface is a built-in functional interface.
 // It takes a single input argument, performs an action on it, and returns no result (void). 
 
-public class ConsumerExample {
+public class ConsumerExample1 {
     public static void main(String[] args) {
         // 1. Define a consumer that accepts a String and prints it
         // it is accepting "message" here, which we know it is a String because Consumer is a generic class

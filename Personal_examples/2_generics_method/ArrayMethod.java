@@ -2,6 +2,7 @@ public class ArrayMethod {
 
   // This is a generic method. It works with any type (T)
   // The type can be any letter - T is just the convention
+  // be careful with the operations you perform!!!
   public static <T> void printArray(T[] array) {
     
     // notice the type for each item pulled from the array is of type T

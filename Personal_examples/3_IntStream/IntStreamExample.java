@@ -10,7 +10,7 @@ public class IntStreamExample {
 
         // method chaining
         IntStream.range(1, 10) 
-                 .filter(n -> n % 2 != 0)  // Keep odd numbers
+                 .filter(n -> n % 2 != 0)  // Implement functional interface & Keep odd numbers
                  .map(n -> n * n)          // Square them
                  .forEach(System.out::println); 
 

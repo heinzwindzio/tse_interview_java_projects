@@ -18,8 +18,8 @@ public class CastException
 
 
         // with generics, throws a compile time error:
-        // Class<String> s2 = String.class;
-        // Integer i2 = (Integer)s2.getDeclaredConstructor().newInstance();
+        Class<String> s2 = String.class;
+        Integer i2 = (Integer)s2.getDeclaredConstructor().newInstance();
 
 
 

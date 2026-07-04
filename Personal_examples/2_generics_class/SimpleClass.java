@@ -4,7 +4,7 @@
 class Box<T> {
 
   //instance variable
-  T value; // T is a placeholder for any data type
+  private T value; // T is a placeholder for any data type
 
   void set(T value) {
 
@@ -18,6 +18,7 @@ class Box<T> {
 }
 
 // Multiple type parameters (parameters are in angle brackets): K for Key, V for Value
+// The class header types will map to the parameters
 class Pair<K, V> {
   private K key;
   private V value;
@@ -46,7 +47,8 @@ public class SimpleClass {
     intBox.set(50);
     System.out.println("Value 2: " + intBox.get());
 
-    // Using multiple parameters: String for Key, Integer for Value
+    // Using multiple input parameters: String for Key, Integer for Value
+    // These get mapped in the class header
     Pair<String, Integer> studentAge = new Pair<>("Heinz", 55);
     studentAge.printPair();
   }
