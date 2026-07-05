@@ -1,9 +1,11 @@
-package both_kinds;
+// A concrete class in Java is any class that has a complete implementation of all its methods and 
+// can be directly instantiated using the new keyword. Unlike abstract classes or interfaces, 
+// a concrete class is 100% implemented, meaning it contains zero abstract (unimplemented) methods
 
 // Airplane IS A Vehicle and CAN FLY
-public class Airplane extends AbstractVehicle implements FlyableInterface {
+public class ConcreteAirplane extends AbstractVehicle implements FlyableInterface {
     
-    public Airplane(String model) {
+    public ConcreteAirplane(String model) {
         super(model);
     }
 

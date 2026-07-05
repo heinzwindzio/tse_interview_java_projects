@@ -1,10 +1,8 @@
-package both_kinds;
-
 public class Main {
     public static void main(String[] args) {
 
         //calls the Airplane constructure, which calls the AbstractVehicle constructor using super()
-        Airplane myPlane = new Airplane("Boeing 737");
+        ConcreteAirplane myPlane = new ConcreteAirplane("Boeing 737");
 
         // Use the AbstractVehicle identity to call it's methods
         // remember, Airplane can override the methods

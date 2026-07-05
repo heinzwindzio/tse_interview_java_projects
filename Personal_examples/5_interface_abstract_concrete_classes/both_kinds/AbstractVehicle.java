@@ -1,5 +1,3 @@
-package both_kinds;
-
 public abstract class AbstractVehicle {
     
     // Focuses on WHAT an object is. Defines common state and behavior.
