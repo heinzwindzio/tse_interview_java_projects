@@ -19,6 +19,12 @@ public class MyList {
         // still old way
         List<String> fruits2 = new ArrayList<String>();
 
+        // different way - creating a fix sized List
+        List<String> fruitsArray = Arrays.asList("f0", "f1");
+        fruitsArray.stream().forEach(System.out::println);
+        fruitsArray.add("f2"); // will throw an UnsupportedOperationException
+
+
         // new way
         List<String> fruits3 = new ArrayList<>();
         fruits3.add("Apple");
@@ -30,8 +36,7 @@ public class MyList {
         // System.out.println(immutableList);
         System.out.print(immutableList.get(0));
         immutableList.stream().forEach(System.out::println);
-        // will throw an UnsupportedOperationException
-        // immutableList.add(15); 
+        immutableList.add(15); // will throw an UnsupportedOperationException
 
     }
 }

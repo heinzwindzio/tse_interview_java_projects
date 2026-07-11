@@ -1,5 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
+
 
 
 // Method reference is considered 'syntactic sugar' for lambda expressions
@@ -10,12 +12,26 @@ public class EasyExamples {
     
     public static void main(String[] args){
 
+        // fixed size List
         List<String> fruits = Arrays.asList("apple", "banana", "cherry");
 
         // 1. Using Lambda Expression
         fruits.forEach(fruit -> System.out.println(fruit));
 
         // 2. Using Method Reference (Identical behavior, cleaner look)
+        // forEach(Consumer Functional Interface)
+        fruits.forEach(item -> System.out.println(item));
+        
+        // if the Consumer method calls an existing method, then we can use syntactic sugar
         fruits.forEach(System.out::println); 
+
+        // This is what it's doing under the hood:
+        fruits.forEach(new Consumer<String>() {
+                @Override
+                public void accept(String item) {
+                    System.out.println(item);
+                }
+        });
+
     }
 }
