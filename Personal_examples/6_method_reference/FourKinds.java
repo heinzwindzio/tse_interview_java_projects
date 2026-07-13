@@ -12,17 +12,28 @@ public class FourKinds{
         cars.add("2");
         cars.add("3");
 
-        // now print it using the List.forEach(Consumer Functional Interface) method
-        // you can't change (add or remove) items in the List...but you can mutate them
-        System.out.println("method 1 - put arg into a static method");
-        cars.forEach(str -> {
-            str.setName(str.getName() + ":number");
-        });
-        System.out.println("now with method reference");
+        // List.stream.map(Function)
+        System.out.println("method 1 - reference to a static method");
+        cars.stream()
+            .map(Integer::parseInt)
+            .collect(Collectors.toList());          // the car is passed to parseInt(car)
+        System.out.println(cars); 
+
+        // List.forEach(Consumer) 
+        // you can't change (add or remove) items using forEach...and it's hard to change the values
+        System.out.println("method 2 - reference to an instance method");
         cars.forEach(System.out::println);
+
+        // List.stream.filter(Predicate)
+       long num = cars.stream()
+            .filter(String::isEmpty)
+            .count();
+        System.out.println("Here are the number of strings that are empty: " + num);
         
-        
-        //cars.forEach(System.out::println);
+        ArrayList<String> dupList = cars.stream()
+                                    .collect(Collectors.toCollection(ArrayList::new));
+        System.out.println("Here's the duplicate list: ");
+        dupList.forEach(System.out::println);
 
     }
 }
