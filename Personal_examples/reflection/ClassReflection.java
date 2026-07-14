@@ -1,6 +1,10 @@
 import java.lang.reflect.Method;
 import java.lang.reflect.Field;
 
+/**
+ * Reflection allows you to do things like grab a private field from another class, and either view or modify it! Very dangerous!!
+ * 
+ */
 public class ClassReflection
  {
  
