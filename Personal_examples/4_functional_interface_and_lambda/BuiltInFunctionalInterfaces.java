@@ -1,6 +1,27 @@
 import java.util.function.*;
-
 import java.util.List;
+
+
+/**
+ * 
+ * Consumer - Takes one argument and returns no result (void)
+ *      Function Interface has a method 'accept(T t)'
+ * 
+ * Function - Takes one argument and returns a result
+ *      Function Interface has a method 'apply(T t)'
+ * 
+ * Predicate - Takes one argument and returns a boolean
+ *      Function Interface has a method 'test(T t)'
+ *  
+ * BiFunction - Takes two arguments and returns a result
+ *      Function Interface has a method 'apply(T t, U u)'
+ * 
+ * Supplier - Takes no arguments and returns a result
+ *      Function Interface has a method 'get()'
+ * 
+ */
+
+
 public class BuiltInFunctionalInterfaces {
     
     public static void main(String[] args) {
@@ -8,6 +29,7 @@ public class BuiltInFunctionalInterfaces {
         // 1. Consumer - Takes one argument and returns no result (void)
         // Consumer<InputType>
         Consumer<String> printer = s -> System.out.println("Printing: " + s);
+        // Consumer<String> printer = BuiltInFunctionalInterfaces::printWithPrefix;
         printer.accept("Functional Interfaces");
 
         
@@ -46,6 +68,10 @@ public class BuiltInFunctionalInterfaces {
         System.out.println("Random value: " + randomValue.get());
 
 
+    }
+
+    private static void printWithPrefix(String s) {
+        System.out.println("Printing: " + s);
     }
 
 }
