@@ -1,6 +1,18 @@
 public class Main {
     
     public static void main(String[] args) {
+        
+
+        // Example of an array of ints
+        int[] nums = new int[5];
+        nums[0] = 3;
+        nums[1] = 6;
+        nums[3] = 0;    
+
+        for (int x=0; x < nums.length; x++){
+            System.out.println(nums[x]);
+        }
+        
         // Example of an array of Strings
         String[] fruits = {"Apple", "Banana", "Cherry"};
 
