@@ -20,6 +20,17 @@ public class SimpleInts {
         Arrays.sort(o);
         System.out.println("This is o after sorting: " + Arrays.toString(o));
 
+        //enhanced for-each loops
+        for (int x : o){
+            System.out.println("This is x: " + x);
+        }
+
+        String[] cars = {"Porche", "Lexus", "Audi"};
+        Arrays.sort(cars);
+        
+        for (String car : cars){
+            System.out.println("This is a car maker I'm considering: " + car);
+        }
         
 
     }
