@@ -1,3 +1,7 @@
+/**
+ * You can also declare your own enum class methods
+ */
+
 public enum HttpStatusCodeEnumClass {
     
     // each one of these are the instance of the enum

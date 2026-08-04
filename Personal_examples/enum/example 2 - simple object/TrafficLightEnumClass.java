@@ -6,17 +6,18 @@ public enum TrafficLightEnumClass {
     GREEN("Go");
 
     // declare the variable for the constant
-    private final String action;
+    private final String constantVar;
 
     // enums always have a private constructor
     // it is called when the constants are initialized at startup
-    private TrafficLightEnumClass(String action) {
-        this.action = action;
+    // must be private
+    private TrafficLightEnumClass(String constantVar) {
+        this.constantVar = constantVar;
     }
 
     // Public method
-    public String getAction() {
-        return this.action;
+    public String getConstantVar() {
+        return this.constantVar;
     }
 }
 
