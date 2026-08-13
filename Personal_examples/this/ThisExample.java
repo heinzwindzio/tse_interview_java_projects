@@ -1,9 +1,14 @@
+
+/**
+ * Use 'this' to tell Java you want to assign the value to the class instance field
+ */
+
 public class ThisExample {
     private String name; // Instance variable
 
     public ThisExample(){
         // this has to be the first statement in the constructor
-        this("The no argument constructor was called");
+        this("Calling from the no argument constructor");  // constuctor chaining
     }
 
     public ThisExample(String name) {
@@ -19,5 +24,14 @@ public class ThisExample {
 
         ThisExample example2 = new ThisExample("Created an instance of ThisExample and called the constructor with a String arg");
         System.out.println(example2.name);
+
+
+        
+        // Because this represents a specific object instance, you cannot use this inside 
+        // static methods or static blocks. Static code belongs to the class itself, 
+        // not to any individual object instance. Attempting to use it here will 
+        // cause a compilation error.
+        
+        // this.name = "Compilation Error";
     }
 }
