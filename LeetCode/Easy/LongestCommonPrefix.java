@@ -24,7 +24,7 @@ public class LongestCommonPrefix {
         String secondString = "";
         String prefix = "";
 
-        List<String> linkedPrefixes = new ArrayList<>();
+        List<String> prefixList = new ArrayList<>();
 
         // loop through each string in the array
         for (int x=0; x<strs.length; x++){ 
@@ -47,13 +47,13 @@ public class LongestCommonPrefix {
                     }
                     else break; // break out of the loop
                 }
-                linkedPrefixes.add(prefix); // add the prefix to the List
+                prefixList.add(prefix); // add the prefix to the List
                 prefix = ""; // reset the prefix
             }
         }
 
         // Find the longest string
-        Optional<String> longest = linkedPrefixes.stream().max(Comparator.comparingInt(pre -> pre.length()));
+        Optional <String> longest = prefixList.stream().max(Comparator.comparingInt(pre -> pre.length()));
         // Optional<String> longest = linkedPrefixes.stream().max(Comparator.comparingInt(String::length());
 
         return longest.get();
