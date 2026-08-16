@@ -10,30 +10,33 @@ public class LongestCommonPrefix2 {
 
         String[] words = {"flower","flow","flight"};
 
-        String first = "";
-        String second = "";
-        String prefix = "";
+        // the maximum letters that all words have in common
+        int maxLetters = 0;
 
-        first = words[0];
+        String firstWord = words[0];
+        String nextWord = "";
 
+        // compare prefix against the rest of the words, subtracting from the max length as we go
+        
+        // loop through the array, starting with the second word
         for (int x=1; x<words.length; x++){
 
-            System.out.println("This is the first word: " + first);
+            // grab the next word
+            nextWord = words[x];
 
-            second = words[x];
-            System.out.println("This is the second word: " + second);
+            // loop through each letter in the current word
+            for (int y=0; y <nextWord.length(); y++){
 
-            for (int z=0; (z<first.length()) && (z<second.length()); z++){
-                if (first.charAt(z) == second.charAt(z)){
-                    prefix = prefix + first.charAt(z);
+                // compare each letter in the current word with the next word, starting with the char at max length
+                if (firstWord.charAt(y) == nextWord.charAt(y)){
+
+                    // if a match then increase the max length by 1
+                    maxLetters++;
                 }
                 else break;
-            }
-
-            first = prefix;
-
+            }   
         }
 
-        System.out.println("This is the prefix dude: " + prefix);
+
     }
 }
