@@ -1,17 +1,19 @@
+import java.util.ArrayList;
+
 public class OpenParens {
     
     public static void main(String[] args){
 
-        String[] parens = {"((()()))"};
-        // String[] parans = {"( { ) }"};
+        ArrayList parensList;
+        String[] parens = {"((())))("};
+        // String[] parens = {"( { () ) }"};
 
         
-        // count the number of open of a specific type
-        // count the number of closed of a specific type
-        // check to ensure every open comes before a close, based on countOpen and countClose. Use linked list to add and remove
+        // check to ensure that each parens starts with an open, and for each open it has exactly one close reading L->R
+        
 
         // hand mixed parens
-        // when opening a parens, ensure that the following parens of a different type are all closed before closing 
+        // when opening a parens, flag it as the type that needs to close next
 
 
     }
