@@ -46,19 +46,6 @@ public class OpenParens {
                 }
             }
 
-            // if last position is an open then false
-            if (x == (parensList.size()-1)) { 
-                
-                // get the value
-                char last = parensList.get(x);
-                
-                // if last char is an open bracket, then false
-                if (last == '(' || last == '{' || last == '[') {
-                answer = false;
-                break outerloop;
-                }
-            }
-
             // Check for a close   
             switch (parensList.get(x)){
 
@@ -139,11 +126,22 @@ public class OpenParens {
                     break;
             } // end switch
 
-            // after setting the index back 2, check to see if it's the last position in the list and an open bracket
-            
-            
+            // if last position is an open bracket, then false
+            if (x == (parensList.size()-1)) { 
+                
+                // get the value
+                char last = parensList.get(x);
+                
+                // if last char is an open bracket, then false
+                if (last == '(' || last == '{' || last == '[') {
+                    System.out.println("ending on an open bracket");
+                    answer = false;
+                    break outerloop;
+                }
+            }
+
         } // end for
         System.out.println("This is the answer: " + answer);
 
-    }
-}
+    } // end main method
+} // end class
