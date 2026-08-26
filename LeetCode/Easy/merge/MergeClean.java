@@ -57,6 +57,18 @@ public class MergeClean{
             merged = merged.next;
         }
 
+        System.out.println("Here is head1 after sort:");
+        while (head1 != null){
+            System.out.println(head1.val);
+            head1 = head1.next;
+        }
+
+        System.out.println("Here is head2 after sort:");
+        while (head2 != null){
+            System.out.println(head2.val);
+            head2 = head2.next;
+        }
+
     }
 
     private ListNode mergeTwoLists(ListNode list1, ListNode list2) {
