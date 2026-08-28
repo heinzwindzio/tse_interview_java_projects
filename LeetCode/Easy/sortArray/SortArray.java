@@ -2,7 +2,7 @@ public class SortArray {
 
     public static void main(String[] args){
 
-        int[] nums = {1,1,1,1,1,1,1,1}; // Input array that will be sorted
+        int[] nums = {3,3,3,3,3}; // Input array that will be sorted
         int k; // the length of the array that is sorted
 
         SortArray sa = new SortArray();
@@ -17,6 +17,7 @@ public class SortArray {
         
         int dupCount = 0;
         int dup;
+        int sequentialDupCount; // number of comparisons made
         
         // loop through the array
         for (int x=0; x<(nums.length-1); x++){
@@ -26,11 +27,15 @@ public class SortArray {
                 break;
             }
                 
-            // if the 2 numbers are the same or we've reached the end of size of the array
-            if (nums[x] == nums[x+1]){
+            // if the 2 numbers are the same in the first compare, 
+            if ( (nums[x] == nums[x+1]) && (x != nums.length-1) ){
 
-                // loop while the 2 numbers are the same or we've reached the end of the array
-                while ( (nums[x] == nums[x+1]) || (x == nums.length-1) ){
+                sequentialDupCount=0;
+
+                // keep looping while the numbers are the same, and we haven't compared all the numbers
+                while ( (nums[x] == nums[x+1]) && (sequentialDupCount <= (nums.length-1)-x) ){
+
+                    sequentialDupCount++;
 
                     // increment dup count by 1
                     dupCount++;
@@ -38,7 +43,7 @@ public class SortArray {
                     // put the first value in an variable
                     dup = nums[x+1];
                     
-                    // loop through the remainder of the array until index - 1, shifting the position by 1 each time
+                    // shift the position by 1 each time
                     for (int y=(x+1); y<(nums.length-1); y++){
 
                         nums[y] = nums[y+1];
