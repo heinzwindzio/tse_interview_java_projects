@@ -1,33 +1,62 @@
 public class SortArray {
-    
-    public int[] nums; // Input array
 
-    public SortArray(int[] nums){
-        this.nums = nums;
-    }
-
-    
     public static void main(String[] args){
 
-        int[] values = {1,1,1,2,3}; // Input array
-        SortArray sa = new SortArray(values);
+        int[] nums = {1,1,1,1,1,1,1,1}; // Input array that will be sorted
+        int k; // the length of the array that is sorted
 
-        int[] expectedNums = {1,2,3}; // The expected answer with correct length
+        SortArray sa = new SortArray();
 
-        int k = sa.removeDuplicates(this.nums);
+        k = sa.removeDuplicates(nums);
 
-        assert k == expectedNums.length;
+        System.out.println("This is the length of the sorted numbers in the array: " + k);
 
-        for (int i = 0; i < k; i++) {
-            assert nums[i] == expectedNums[i];
-        }
     }
 
-    public static int removeDuplicates(int[] nums) {
+    public int removeDuplicates(int[] nums) {
         
-        // sort nums in place
+        int dupCount = 0;
+        int dup;
+        
+        // loop through the array
+        for (int x=0; x<(nums.length-1); x++){
 
-        int sortedLength = 3;
+            // if we've reached the end of the unique numbers then break out of the loop
+            if (x == (nums.length-dupCount)){
+                break;
+            }
+                
+            // if the 2 numbers are the same or we've reached the end of size of the array
+            if (nums[x] == nums[x+1]){
+
+                // loop while the 2 numbers are the same or we've reached the end of the array
+                while ( (nums[x] == nums[x+1]) || (x == nums.length-1) ){
+
+                    // increment dup count by 1
+                    dupCount++;
+
+                    // put the first value in an variable
+                    dup = nums[x+1];
+                    
+                    // loop through the remainder of the array until index - 1, shifting the position by 1 each time
+                    for (int y=(x+1); y<(nums.length-1); y++){
+
+                        nums[y] = nums[y+1];
+                    }
+
+                    // put the second number in the last position 
+                    nums[nums.length-1] = dup;
+
+                } // while
+            }
+        } // for
+
+
+        for (int z=0; z<nums.length; z++){
+            System.out.println(nums[z]);
+        }
+
+        int sortedLength = nums.length-dupCount;
 
         return sortedLength;
     }
