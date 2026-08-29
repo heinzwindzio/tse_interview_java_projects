@@ -2,57 +2,49 @@ public class SortArray {
 
     public static void main(String[] args){
 
-        int[] nums = {3,3,3,3,3}; // Input array that will be sorted
+        int[] nums = {1,2,2,3,4,5}; // Input array that will be sorted
+        //int[] nums = {1,2,3,3,3,3}; // Input array that will be sorted
+        //int[] nums = {3,3,3,3,3,3}; // Input array that will be sorted
         int k; // the length of the array that is sorted
 
         SortArray sa = new SortArray();
-
         k = sa.removeDuplicates(nums);
-
         System.out.println("This is the length of the sorted numbers in the array: " + k);
 
     }
 
     public int removeDuplicates(int[] nums) {
         
-        int dupCount = 0;
         int dup;
-        int sequentialDupCount; // number of comparisons made
+        int totalDupCount = 0;
+        int firstNumber = 0;
+
+        if (nums.length == 0){
+            return 0;
+        }
         
-        // loop through the array
+        // loop through the total number of comparisons to make. x != position in array
         for (int x=0; x<(nums.length-1); x++){
-
-            // if we've reached the end of the unique numbers then break out of the loop
-            if (x == (nums.length-dupCount)){
-                break;
-            }
                 
-            // if the 2 numbers are the same in the first compare, 
-            if ( (nums[x] == nums[x+1]) && (x != nums.length-1) ){
+            // if the 2 numbers are the same, make an adjustment
+            if (nums[firstNumber] == nums[firstNumber+1]) {
 
-                sequentialDupCount=0;
+                // increment dup count by 1
+                totalDupCount++;
 
-                // keep looping while the numbers are the same, and we haven't compared all the numbers
-                while ( (nums[x] == nums[x+1]) && (sequentialDupCount <= (nums.length-1)-x) ){
+                // put the first value in an variable
+                dup = nums[firstNumber+1];
+                
+                // shift the position by 1 each time
+                for (int y=(firstNumber+1); y<(nums.length-1); y++){
+                    nums[y] = nums[y+1];
+                }
 
-                    sequentialDupCount++;
-
-                    // increment dup count by 1
-                    dupCount++;
-
-                    // put the first value in an variable
-                    dup = nums[x+1];
-                    
-                    // shift the position by 1 each time
-                    for (int y=(x+1); y<(nums.length-1); y++){
-
-                        nums[y] = nums[y+1];
-                    }
-
-                    // put the second number in the last position 
-                    nums[nums.length-1] = dup;
-
-                } // while
+                // put the second number in the last position 
+                nums[nums.length-1] = dup;
+            }
+            else{ // different numbers, increment the index of the next number to compare
+                firstNumber++; // move to the next position in the array
             }
         } // for
 
@@ -61,7 +53,7 @@ public class SortArray {
             System.out.println(nums[z]);
         }
 
-        int sortedLength = nums.length-dupCount;
+        int sortedLength = nums.length-totalDupCount;
 
         return sortedLength;
     }
