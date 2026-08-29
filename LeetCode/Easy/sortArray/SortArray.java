@@ -2,9 +2,9 @@ public class SortArray {
 
     public static void main(String[] args){
 
-        int[] nums = {1,2,2,3,4,5}; // Input array that will be sorted
+        //int[] nums = {1,2,2,3,4,5}; // Input array that will be sorted
         //int[] nums = {1,2,3,3,3,3}; // Input array that will be sorted
-        //int[] nums = {3,3,3,3,3,3}; // Input array that will be sorted
+        int[] nums = {3,3,3,3,3,3}; // Input array that will be sorted
         int k; // the length of the array that is sorted
 
         SortArray sa = new SortArray();
