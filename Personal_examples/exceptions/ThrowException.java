@@ -6,6 +6,7 @@ public class ThrowException {
     
     public static void main(String[] args) {
         
+
         try{
             readFile("file.txt");
 
@@ -14,6 +15,8 @@ public class ThrowException {
         } finally {
             System.out.println("In the finally block to close the connection");
         }
+
+        System.out.println("Executing code after the exception is caught");
 
 
     }
