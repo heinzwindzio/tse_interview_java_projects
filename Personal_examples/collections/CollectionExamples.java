@@ -8,7 +8,7 @@ import java.util.stream.*;
 
 
 
-public class Main {
+public class CollectionExamples {
     
     /**  
     * read the : as 'in'
@@ -21,15 +21,16 @@ public class Main {
 
             // Four major Collection Interfaces: Lists, Sets, Queues, Maps
  
-            // Lists
-            // Immutable List
-            List<String> immutableNames = List.of("Alice", "Bob", "Charlie");
 
+            // LISTS 
+
+            // mutable List
             List<String> names = new ArrayList<>();
             names.add("Alice");
-            names.add("Alice"); // Duplicate
+            names.add("Alice"); // Duplicates allowed
             names.add("Bob");
             names.add("Charlie");
+            names.set(1, "Allllll");  // will not change it at runtime
             
             // read colon as 'in'. Name is the variable name
             for (String name : names) {
@@ -38,8 +39,19 @@ public class Main {
 
             // let's try to print them up from a stream
             names.stream().forEach(System.out::println);
+
+            // fixed size List
+            List<String> fixedSizedList = Arrays.asList("f0", "f1"); // this makes it fixed size
+            fixedSizedList.stream().forEach(System.out::println);
+            //  fixedSizedList.add("f2"); // will throw an UnsupportedOperationException
             
-            // Sets - do not allow duplicates
+            // Immutable List
+            List<String> immutableNames = List.of("Alice", "Bob", "Charlie");
+            // immutableNames.set(1, "Allllll");  // will through an UnsupportedOperationException
+
+
+            // SETS - do not allow duplicates
+
             // HashSet doesn't guarantee any order
             Set<String> uniqueNames = new HashSet<>();
             uniqueNames.add("Alice");
@@ -50,10 +62,14 @@ public class Main {
                 System.out.println(name);
             }
 
-            // Queues - FIFO or LIFO
+
+            // QUEUES - FIFO or LIFO
+
             Queue<String> nameQueue = new LinkedList<>();
 
-            // Maps - key-value pairs
+
+            // MAPS - key-value pairs
+
             // Hashmap doesn't guarantee any order
             Map<String, Integer> ageMap = new HashMap<>();
             ageMap.put("Alice", 25);
