@@ -28,10 +28,15 @@ public class BuiltInFunctionalInterfaces {
         
         // 1. Consumer - Takes one argument and returns no result (void)
         // Consumer<InputType>
+        // most common inside Iterator.forEach() loops
         Consumer<String> printer = s -> System.out.println("Printing: " + s);
         // Consumer<String> printer = BuiltInFunctionalInterfaces::printWithPrefix;
         printer.accept("Functional Interfaces");
 
+        // 5. Supplier - Takes no arguments and returns a result
+        // Supplier<OutputType>
+        Supplier<Double> randomValue = () -> Math.random();
+        System.out.println("Random value: " + randomValue.get());
         
         // 2. Function - Takes one argument and returns a result
         // Function<InputType, OutputType>
@@ -62,10 +67,7 @@ public class BuiltInFunctionalInterfaces {
         System.out.println("Result of 6 * 7: " + multiply.apply(6, 7));
 
 
-        // 5. Supplier - Takes no arguments and returns a result
-        // Supplier<OutputType>
-        Supplier<Double> randomValue = () -> Math.random();
-        System.out.println("Random value: " + randomValue.get());
+
 
 
     }
