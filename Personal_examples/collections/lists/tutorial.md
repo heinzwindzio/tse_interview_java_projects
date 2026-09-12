@@ -1,2 +1,2 @@
-* when instantiating a List, the size is 0 and there are no nulls in it
-* but if you call the List.add() method, with either a new List (2D) or a 'null' then the value is null. 
+* When instantiating a List, it's an empty List with a size of 0. There are no nulls in it
+* But if you call the List.add(null) method, then the value is null. 
