@@ -1,0 +1,1 @@
+* when instantiating a List, the size is 0 and there are no nulls in it
