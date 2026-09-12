@@ -25,7 +25,14 @@ public class Subsets {
         List<List<Integer>> output = new ArrayList();
         output.add(new ArrayList());
 
-        
+        for (List<Integer> outer : output){
+            for (Integer value : outer){
+
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+
 
         for (int num : nums) {
             List<List<Integer>> newSubsets = new ArrayList();
