@@ -1,4 +1,4 @@
-public class LongestSubstring {
+public class LongestSubstringRejected {
     
 
     public static void main(String[] args){
