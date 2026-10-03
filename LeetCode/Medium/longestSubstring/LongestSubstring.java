@@ -3,42 +3,48 @@ public class LongestSubstring {
 
     public static void main(String[] args){
 
-        String s = "abcabcbb";
+        //String s = "abcabcbb";"
+        //String s = "bbbbb";
+        String s = "pwwkew";
+
         LongestSubstring ls = new LongestSubstring();
         System.out.println("This is the longest substring: " +ls.lengthOfLongestSubstring(s));
     }
 
+    /**
+     * implements a sliding window
+     */
     public int lengthOfLongestSubstring(String s) {
         
         int result = 0; // constraint includes a 0 length String
+        int left = 0; // left pointer
+        int right = 0; // right pointer
 
-        // loop through each char in the String, creating a substring from that char
-        for(int x = 0; x<s.length(); x++){
+        int[] mapTable = new int[128]; // contains all letters as a key 
 
-            int count = 1;
-            int firstIndex = 0; // position of the first index of the duplicate char
-            String compare = Character.toString(s.charAt(x));
+        // loop through each char in the String with the right index
+        while(right < s.length()){
 
-            // create a new substring to search, without the compare char
-            String temp = s.substring(x+1);
-            System.out.println(temp);
+            // increment the count for each char in the map table
+            mapTable[s.charAt(right)]++;
 
-            // search the temp String for the first index of the duplicate char
-            firstIndex = temp.indexOf(compare);
+            // loop while we still have a count > 1 for that right index 
+            while(mapTable[s.charAt(right)]>1){
 
-            // if it exists, then count = index - 1
-            if(firstIndex != -1){
-                System.out.println(firstIndex); 
-                count = firstIndex+1;
-            }
-            else{ // otherwise the count = temp.length()
-                count = temp.length()+1;
+                // decrease the count of that char in the map table by 1
+                mapTable[s.charAt(left)]--;
+
+                // move the left pointer up by 1
+                left++;
             }
 
-            // if the count is bigger than the result, then result = count
-            if(count>result) result = count;
+            // see if it's longer than the current length of a substring
+            result = Math.max(result, right-left+1);
 
-        } // end for
+            // move the right index forward
+            right++;
+        }
+
         return result;
     }
 }
